@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide
 import curso.kotlin.stantchallengetest.R
 import curso.kotlin.stantchallengetest.presentation.models.MoviePresentation
 import kotlinx.android.synthetic.main.movie_item.view.*
+import kotlinx.android.synthetic.main.movie_item.view.movieReleaseDataTextView
+import kotlinx.android.synthetic.main.movie_item.view.movieTitleTextView
 
 class MovieAdapter(
     private val movies: List<MoviePresentation>,
@@ -18,8 +20,8 @@ class MovieAdapter(
 
         fun bindMovie(movie: MoviePresentation, onClickItem: OnClickItem) {
             itemView.movieTitleTextView.text = movie.title
-            itemView.movieReleaseDataTextView.text = movie.releaseDate
             itemView.genreTextView.text = movie.genreIds
+            itemView.movieReleaseDataTextView.text = movie.releaseDate
 
             Glide.with(itemView)
                 .load(BASE_IMAGE_URL.plus(movie.imageRelativeUrl))
