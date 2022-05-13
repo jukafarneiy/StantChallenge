@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StantChallengeTest</string>
+    <string name="tv_movies">Filmes</string>
+    <string name="tv_now_playing">Em cartaz</string>
+    <string name="text_movie_title">Movie Title</string>
+    <string name="text_release_date">Release Date</string>
+    <string name="text_genre_movie">Genre</string>
+    <string name="text_origin_language">Origin Language</string>
+    <string name="text_overview">Overview</string>
+</resources>
