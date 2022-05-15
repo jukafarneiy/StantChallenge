@@ -1,33 +1,31 @@
 package curso.kotlin.stantchallengetest.presentation.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import curso.kotlin.stantchallengetest.R
+import curso.kotlin.stantchallengetest.databinding.MovieItemBinding
 import curso.kotlin.stantchallengetest.presentation.models.MoviePresentation
-import kotlinx.android.synthetic.main.movie_item.view.*
-import kotlinx.android.synthetic.main.movie_item.view.movieReleaseDataTextView
-import kotlinx.android.synthetic.main.movie_item.view.movieTitleTextView
 
 class MovieAdapter(
-    private val movies: List<MoviePresentation>,
     private val onClickItem: OnClickItem
 ) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val movies: MutableList<MoviePresentation> = mutableListOf()
+
+    class MovieViewHolder(private val binding: MovieItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bindMovie(movie: MoviePresentation, onClickItem: OnClickItem) {
-            itemView.movieTitleTextView.text = movie.title
-            itemView.genreTextView.text = movie.genreIds
-            itemView.movieReleaseDataTextView.text = movie.releaseDate
+            binding.movieTitleTextView.text = movie.title
+            binding.genreTextView.text = movie.genres.toString()
+            binding.movieReleaseDataTextView.text = movie.releaseDate
 
-            Glide.with(itemView)
+            Glide.with(binding.moviePosterImageView)
                 .load(BASE_IMAGE_URL.plus(movie.imageRelativeUrl))
-                .into(itemView.moviePosterImageView)
+                .into(binding.moviePosterImageView)
 
-            itemView.setOnClickListener {
+            binding.root.setOnClickListener {
                 onClickItem.onClick(movie)
             }
         }
@@ -38,8 +36,9 @@ class MovieAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        val binding = MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+            binding
         )
     }
 

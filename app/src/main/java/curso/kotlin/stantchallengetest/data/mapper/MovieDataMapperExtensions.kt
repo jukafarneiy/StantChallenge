@@ -8,7 +8,7 @@ fun MovieData.mapperToDomain(): MoviePresentation {
         id = id ?: "",
         title = title ?: "",
         imageRelativeUrl = poster ?: "",
-        genreIds = genre ?: "",
+        genres = emptyList(),
         releaseDate = release ?: ""
     )
 }
