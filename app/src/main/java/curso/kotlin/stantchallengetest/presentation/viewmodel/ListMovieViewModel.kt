@@ -4,7 +4,6 @@ import androidx.lifecycle.*
 import curso.kotlin.stantchallengetest.data.repository.MovieRepository
 import curso.kotlin.stantchallengetest.domain.Resource
 import curso.kotlin.stantchallengetest.presentation.models.MoviePresentation
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ListMovieViewModel(private val movieRepository: MovieRepository) : ViewModel() {

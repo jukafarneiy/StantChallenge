@@ -10,7 +10,7 @@ abstract class EndlessRecyclerOnScrollListener(
 ) :
     RecyclerView.OnScrollListener() {
     private var previousTotal = 0
-    var loading = true
+    private var loading = true
     private var firstVisibleItem = 0
     private var visibleItemCount = 0
     private var totalItemCount = 0
