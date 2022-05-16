@@ -7,5 +7,7 @@ data class MoviePresentation(
     val id: String,
     val imageRelativeUrl: String,
     val genres: List<String>,
-    val releaseDate: String
+    val releaseDate: String,
+    val overview: String,
+    val originalLanguage: String
 ) : Serializable

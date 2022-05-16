@@ -7,5 +7,7 @@ data class MovieData(
     @SerializedName("title") val title: String?,
     @SerializedName("poster_path") val poster: String?,
     @SerializedName("genre_ids") val genre: List<String>,
-    @SerializedName("release_date") val release: String?
+    @SerializedName("release_date") val release: String?,
+    @SerializedName("overview") val overview: String?,
+    @SerializedName("original_language") val language: String?
 )

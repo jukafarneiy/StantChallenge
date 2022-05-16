@@ -22,11 +22,12 @@ class MovieDetailsActivity : AppCompatActivity() {
         binding.movieTitleTextView.text = movie.title
         binding.genreTextView.text = movie.genres.toString()
         binding.movieReleaseDataTextView.text = movie.releaseDate
+        binding.languageTextView.text = movie.originalLanguage
+        binding.overviewTextView.text = movie.overview
 
         Glide.with(binding.imageMovieDetail)
             .load(BASE_IMAGE_URL.plus(movie.imageRelativeUrl))
             .into(binding.imageMovieDetail)
-
     }
 
     companion object {

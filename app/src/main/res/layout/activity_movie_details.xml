@@ -20,27 +20,28 @@
 
         <ImageView
             android:id="@+id/image_movie_detail"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toStartOf="@id/movieTitleTextView"
             app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="fitXY"
             app:layout_constraintTop_toBottomOf="@+id/viewTop"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/movieTitleTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
             tools:text="asdsadaasdasdsa"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_movie_detail"
-            app:layout_constraintTop_toBottomOf="@+id/viewTop" />
+            app:layout_constraintTop_toTopOf="@id/image_movie_detail"/>
 
         <TextView
             android:id="@+id/movieReleaseDataTextView"
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:text="@string/text_release_date"
+            tools:text="release data"
             android:textColor="@color/yellow"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/image_movie_detail"
@@ -60,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/text_genre_movie"
+            tools:text="generos"
             android:textColor="@color/yellow"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/image_movie_detail"
@@ -70,27 +71,26 @@
             android:id="@+id/languageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/text_origin_language"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="8dp"
+            tools:text="original language"
             android:textColor="@color/yellow"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/genreTextView"
+            app:layout_constraintStart_toEndOf="@+id/image_movie_detail"
             app:layout_constraintTop_toBottomOf="@+id/movieReleaseDataTextView" />
 
         <TextView
             android:id="@+id/overviewTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
-            android:text="@string/text_overview"
+            tools:text="OVERVIEW"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:gravity="center"
             android:textStyle="bold"
+            android:layout_marginHorizontal="32dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/languageTextView" />
 
