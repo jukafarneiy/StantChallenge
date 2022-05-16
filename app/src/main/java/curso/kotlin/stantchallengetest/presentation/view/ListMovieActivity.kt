@@ -46,7 +46,8 @@ class ListMovieActivity : AppCompatActivity(), MovieAdapter.OnClickItem {
     }
 
     private fun paginationRecyclerView() {
-        binding.rvMoviesList.addOnScrollListener(object: EndlessRecyclerOnScrollListener(linearLayout, 5) {
+        binding.rvMoviesList.addOnScrollListener(object :
+            EndlessRecyclerOnScrollListener(linearLayout, 5) {
             override fun onLoadMore() {
                 viewModel.loadMovies()
             }
@@ -69,6 +70,10 @@ class ListMovieActivity : AppCompatActivity(), MovieAdapter.OnClickItem {
     }
 
     override fun onClick(movie: MoviePresentation) {
-        startActivity(Intent(this, MovieDetailsActivity::class.java))
+        val intent = Intent(this, MovieDetailsActivity::class.java)
+        intent.putExtra("movie", movie)
+        startActivity(intent)
     }
+
 }
+

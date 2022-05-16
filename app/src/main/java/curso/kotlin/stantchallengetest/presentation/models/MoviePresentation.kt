@@ -8,4 +8,4 @@ data class MoviePresentation(
     val imageRelativeUrl: String,
     val genres: List<String>,
     val releaseDate: String
-): Serializable
+) : Serializable

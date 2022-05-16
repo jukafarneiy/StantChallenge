@@ -8,6 +8,6 @@ interface MovieService {
     @GET("/3/movie/popular")
     suspend fun getMovieList(
         @Query("api_key") apiKey: String = "f321a808e68611f41312aa8408531476",
-        @Query("page") page: Int,
+        @Query("page") page: Int
     ): MovieListResponseData
 }
